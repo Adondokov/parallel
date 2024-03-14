@@ -1,0 +1,14 @@
+cmake_minimum_required(VERSION 3.24)
+project(sin)
+
+set(CMAKE_CXX_STANDARD 17)
+
+option(USE_DOUBLE OFF)
+
+if(USE_DOUBLE)
+    add_executable(sin task1.cpp)
+    target_compile_definitions(sin PRIVATE YOUR_TYPE=double)
+else()
+    add_executable(sin task1.cpp)
+    target_compile_definitions(sin PRIVATE YOUR_TYPE=float)
+endif()
